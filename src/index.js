@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { MyContext } from './contexto';
+import { MyContextProvider } from './contexto';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-    <h1>Hola</h1>
+    <MyContextProvider>
+        
+    </MyContextProvider>
 );
 
 
