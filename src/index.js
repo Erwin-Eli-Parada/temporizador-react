@@ -11,7 +11,6 @@ root.render(
     </MyContextProvider>
 );
 
-
 //root y contexto
     //temporizador
         //titulo
