@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { MyContextProvider } from './contexto';
-import { App } from './App';
+import { App } from './app';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
     <MyContextProvider>
         <App>
-            
+
         </App>
     </MyContextProvider>
 );
