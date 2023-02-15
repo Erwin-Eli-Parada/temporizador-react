@@ -5,7 +5,7 @@ import { faPlay, faRotateRight } from "@fortawesome/free-solid-svg-icons";
 import { MyContext } from "./contexto";
 
 export function Reloj(props){
-    const {tiempoActualMin, setTiempoActualMin, tiempoActualSeg, setTiempoActualSeg, encendido, setEncendido, tiempoSesion} = useContext(MyContext);
+    const {tiempoActualMin, setTiempoActualMin, tiempoActualSeg, setTiempoActualSeg, encendido, setEncendido, setBreaking, tiempoSesion} = useContext(MyContext);
 
     return(
         <div id="reloj">
@@ -25,6 +25,7 @@ export function Reloj(props){
                 <button id="restart" onClick={e=>{
                     setEncendido(false);
                     setTiempoActualMin(tiempoSesion);
+                    setBreaking(false);
                     setTiempoActualSeg(0);
                 }}>
                     <FontAwesomeIcon icon={faRotateRight}></FontAwesomeIcon>
