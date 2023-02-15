@@ -19,6 +19,8 @@ export function MyContextProvider(props){
         if (!intervalo && encendido) {
             intervalo = setInterval(() => {
                 if (tiempoActualMin<= 0 && tiempoActualSeg<=0) {
+                    let sonido = document.getElementById("beep");
+                    sonido.play();
                     if(breaking){
                         setTiempoActualSeg(0)
                         setTiempoActualMin(tiempoSesion)
@@ -36,7 +38,7 @@ export function MyContextProvider(props){
                         setTiempoActualSeg(tiempoActualSeg - 1);
                     }
                 }
-            }, 150);
+            }, 1000);
         }
         return()=>{
             console.log("se limpia intervalo"+intervalo);

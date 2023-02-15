@@ -11,6 +11,7 @@ export function Reloj(props){
         <div id="reloj">
             <h2 id="timer-label">{breaking?"Break":"Session"}</h2>
             <span id="time-left">{tiempoActualMin+":"+((tiempoActualSeg/10)<1?"0"+tiempoActualSeg:tiempoActualSeg)}</span>
+            <audio src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" className="clip" id="beep" volume={.31}></audio>
             <div id="botones">
                 <button id="start_stop" onClick={e=>{
                     setEncendido(!encendido);
