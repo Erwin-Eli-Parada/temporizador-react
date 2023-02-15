@@ -11,7 +11,6 @@ export function App(props){
                 <Definidor titulo="Tiempo de sesion"></Definidor>
                 <Reloj></Reloj>
             </div>
-            
         </div>
     );
 }
