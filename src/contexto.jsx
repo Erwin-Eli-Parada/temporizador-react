@@ -11,6 +11,7 @@ export function MyContextProvider(props){
     const [tiempoBreak, setTiempoBreak] = useState(5);
     const [tiempoActualMin, setTiempoActualMin]= useState(tiempoSesion);
     const [tiempoActualSeg, setTiempoActualSeg]= useState(0);
+    
 
     useEffect(()=>{
         let intervalo;
