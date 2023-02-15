@@ -7,8 +7,8 @@ export function App(props){
         <div id="temporizador">
             <h1>Reloj de 25 + 5</h1>
             <div id="cuerpo">
-                <Definidor titulo="Tiempo de descanso"></Definidor>
-                <Definidor titulo="Tiempo de sesion"></Definidor>
+                <Definidor titulo="Tiempo de descanso" tipo="descanso"></Definidor>
+                <Definidor titulo="Tiempo de sesion" tipo="sesion"></Definidor>
                 <Reloj></Reloj>
             </div>
         </div>

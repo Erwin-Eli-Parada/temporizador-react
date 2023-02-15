@@ -7,8 +7,8 @@ export function MyContextProvider(props){
     const [encendido, setEncendido] = useState(false);
     const [breaking, setBreaking] = useState(false);
     const [sesion, setSesion] = useState (true);
-    const [tiempoSesion, setTiempoSesion] = useState(2);
-    const [tiempoBreak, setTiempoBreak] = useState(1);
+    const [tiempoSesion, setTiempoSesion] = useState(25);
+    const [tiempoBreak, setTiempoBreak] = useState(5);
     const [tiempoActualMin, setTiempoActualMin]= useState(tiempoSesion);
     const [tiempoActualSeg, setTiempoActualSeg]= useState(0);
 
