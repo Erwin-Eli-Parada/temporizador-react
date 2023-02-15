@@ -8,8 +8,8 @@ export function Definidor(props){
 
     return(
         <div>
-            <h3 id={"eitqueta"+props.titulo}>{props.titulo}</h3>
-            <button onClick={e=>{
+            <h3 id={props.titulo+"-label"}>tiempo de {props.titulo}</h3>
+            <button id={props.titulo+"-increment"} onClick={e=>{
                 if(props.tipo==="descanso"){
                     if(tiempoBreak<60){
                         setTiempoBreak(tiempoBreak+1);
@@ -23,8 +23,8 @@ export function Definidor(props){
             }}>
                 <FontAwesomeIcon icon={faChevronUp}></FontAwesomeIcon>
             </button>
-            <span id={"numero"+props.titulo}> {props.tipo==="descanso"?tiempoBreak:tiempoSesion} </span>
-            <button onClick={e=>{
+            <span id={props.titulo+"-length"}> {props.tipo==="descanso"?tiempoBreak:tiempoSesion} </span>
+            <button id={props.titulo+"-decrement"} onClick={e=>{
                 if(props.tipo==="descanso"){
                     if(tiempoBreak>1){
                         setTiempoBreak(tiempoBreak-1);
@@ -36,7 +36,7 @@ export function Definidor(props){
                     }
                 }
             }}>
-            <FontAwesomeIcon icon={faChevronDown}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faChevronDown}></FontAwesomeIcon>
             </button>
             
         </div>

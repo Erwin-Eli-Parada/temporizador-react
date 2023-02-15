@@ -5,14 +5,14 @@ import { faPlay, faRotateRight } from "@fortawesome/free-solid-svg-icons";
 import { MyContext } from "./contexto";
 
 export function Reloj(props){
-    const {tiempoActualMin, setTiempoActualMin, tiempoActualSeg, setTiempoActualSeg, encendido, setEncendido, setBreaking, tiempoSesion} = useContext(MyContext);
+    const {tiempoActualMin, setTiempoActualMin, tiempoActualSeg, setTiempoActualSeg, encendido, setEncendido, breaking, setBreaking, setTiempoBreak, setTiempoSesion} = useContext(MyContext);
 
     return(
         <div id="reloj">
-            <h2>Sesion</h2>
-            <span id="contador">{tiempoActualMin+":"+((tiempoActualSeg/10)<1?"0"+tiempoActualSeg:tiempoActualSeg)}</span>
+            <h2 id="timer-label">{breaking?"Break":"Session"}</h2>
+            <span id="time-left">{tiempoActualMin+":"+((tiempoActualSeg/10)<1?"0"+tiempoActualSeg:tiempoActualSeg)}</span>
             <div id="botones">
-                <button id="play-pause" onClick={e=>{
+                <button id="start_stop" onClick={e=>{
                     setEncendido(!encendido);
                     // if(encendido){
                     //     contar(tiempoActualSeg, setTiempoActualSeg);
@@ -22,9 +22,11 @@ export function Reloj(props){
                 }}>
                     <FontAwesomeIcon icon={faPlay}></FontAwesomeIcon>
                 </button>
-                <button id="restart" onClick={e=>{
+                <button id="reset" onClick={e=>{
                     setEncendido(false);
-                    setTiempoActualMin(tiempoSesion);
+                    setTiempoBreak(5);
+                    setTiempoSesion(25);
+                    setTiempoActualMin(25);
                     setBreaking(false);
                     setTiempoActualSeg(0);
                 }}>
