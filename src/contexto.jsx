@@ -6,7 +6,7 @@ export const MyContext = createContext();
 export function MyContextProvider(props){
     const [encendido, setEncendido] = useState(false);
     const [sesion, setSesion] = useState (true);
-    const [tiempoSesion, setTiempoSesion] = useState(25);
+    const [tiempoSesion, setTiempoSesion] = useState(1);
     const [tiempoBreak, setTiempoBreak] = useState(5);
     const [tiempoActualMin, setTiempoActualMin]= useState(tiempoSesion);
     const [tiempoActualSeg, setTiempoActualSeg]= useState(0);
@@ -16,10 +16,18 @@ export function MyContextProvider(props){
     
         if (!intervalo && encendido) {
             intervalo = setInterval(() => {
-                if(tiempoActualSeg<=0){setTiempoActualSeg(59)}else{
-                setTiempoActualSeg(tiempoActualSeg-1);
+                if (tiempoActualMin<= 0 && tiempoActualSeg<=0) {
+                    setTiempoActualSeg(0)
+                    setTiempoActualMin(tiempoSesion)
+                } else {
+                    if (tiempoActualSeg <= 0) {
+                        setTiempoActualSeg(59)
+                        setTiempoActualMin(tiempoActualMin - 1)
+                    } else {
+                        setTiempoActualSeg(tiempoActualSeg - 1);
+                    }
                 }
-            }, 100);
+            }, 300);
         }
         return()=>{
             console.log("se limpia intervalo"+intervalo);
