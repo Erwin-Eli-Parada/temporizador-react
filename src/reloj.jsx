@@ -30,6 +30,9 @@ export function Reloj(props){
                     setTiempoActualMin(25);
                     setBreaking(false);
                     setTiempoActualSeg(0);
+                    let sonido = document.getElementById("beep");
+                    sonido.pause();
+                    sonido.currentTime=0;
                 }}>
                     <FontAwesomeIcon icon={faRotateRight}></FontAwesomeIcon>
                 </button>
