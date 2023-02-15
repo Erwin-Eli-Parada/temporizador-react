@@ -12,13 +12,21 @@ export function MyContextProvider(props){
     const [tiempoActualSeg, setTiempoActualSeg]= useState(0);
 
     useEffect(()=>{
-        setTimeout(()=>{
-            setTiempoActualSeg(t=>{
-                if(tiempoActualSeg===0){setTiempoActualSeg(59)}
-                return encendido===true?t-1:t
-            });
-        },1000);
-    },[tiempoActualSeg,encendido]);
+        let intervalo;
+    
+        if (!intervalo && encendido) {
+            intervalo = setInterval(() => {
+                if(tiempoActualSeg<=0){setTiempoActualSeg(59)}else{
+                setTiempoActualSeg(tiempoActualSeg-1);
+                }
+            }, 100);
+        }
+        return()=>{
+            console.log("se limpia intervalo"+intervalo);
+            clearInterval(intervalo);
+            intervalo = null;
+        }
+    });
 
     return(
         <MyContext.Provider value={{encendido, setEncendido, sesion, setSesion, tiempoSesion, setTiempoSesion, tiempoBreak, setTiempoBreak, tiempoActualMin, setTiempoActualMin, tiempoActualSeg, setTiempoActualSeg}}>
