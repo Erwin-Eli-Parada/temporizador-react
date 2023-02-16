@@ -7,8 +7,8 @@ export function Definidor(props){
     const {setTiempoActualMin, tiempoSesion, setTiempoSesion, tiempoBreak, setTiempoBreak} = useContext(MyContext)
 
     return(
-        <div>
-            <h3 id={props.titulo+"-label"}>tiempo de {props.titulo}</h3>
+        <div className="definidor" id={props.titulo}>
+            <h3 id={props.titulo+"-label"}>Tiempo de {props.titulo}</h3>
             <button id={props.titulo+"-increment"} onClick={e=>{
                 if(props.tipo==="descanso"){
                     if(tiempoBreak<60){

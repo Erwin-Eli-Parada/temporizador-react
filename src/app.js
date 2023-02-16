@@ -8,8 +8,8 @@ export function App(props){
             <h1>Reloj de 25 + 5</h1>
             <div id="cuerpo">
                 <Definidor titulo="break" tipo="descanso"></Definidor>
-                <Definidor titulo="session" tipo="sesion"></Definidor>
                 <Reloj></Reloj>
+                <Definidor titulo="session" tipo="sesion"></Definidor>
             </div>
         </div>
     );
